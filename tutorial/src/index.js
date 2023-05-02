@@ -1,19 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const Greeting = () => {
+const BookList = () => {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book></Book>
+      <Book></Book>
+      <Book></Book>
+    </section>
   );
 };
 
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-  return <p>this is the message</p>;
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/91b7tm523VL._AC_UL600_SR600,400_.jpg"
+    alt="The Covenant of Water (Oprah's Book Club)"
+  />
+);
+const Title = () => <h2>The Covenant of Water (Oprah's Book Club)</h2>;
+const Author = () => {
+  return <h4>Abraham Verghese</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Greeting />);
+root.render(<BookList />);
