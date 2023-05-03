@@ -26,7 +26,7 @@ const Book = () => {
 
 const Image = () => (
   <img
-    src="https://images-na.ssl-images-amazon.com/images/I/91b7tm523VL._AC_UL600_SR600,400_.jpg"
+    src="./images/book-1.jpg"
     alt="The Covenant of Water (Oprah's Book Club)"
   />
 );
