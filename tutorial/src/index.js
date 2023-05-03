@@ -15,24 +15,15 @@ const BookList = () => {
 };
 
 const Book = () => {
+  const title = "The Covenant of Water (Oprah's Book Club)";
+  const author = 'Abraham Verghese';
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src="./images/book-1.jpg" alt="{title}" />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
-};
-
-const Image = () => (
-  <img
-    src="./images/book-1.jpg"
-    alt="The Covenant of Water (Oprah's Book Club)"
-  />
-);
-const Title = () => <h2>The Covenant of Water (Oprah's Book Club)</h2>;
-const Author = () => {
-  return <h4>Abraham Verghese</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
