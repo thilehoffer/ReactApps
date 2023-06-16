@@ -19,61 +19,39 @@ const books = [
 ];
 
 const BookList = () => {
+  const getBook = (id) => {
+    const book = books.find((book) => {
+      return book.id === id;
+    });
+    console.log(book);
+  };
+
   return (
     <section className="booklist">
-      <EventExamples />
       {books.map((book) => {
-        return <Book {...book} key={book.id} />;
+        return <Book {...book} getBook={getBook} key={book.id} />;
         //return Book(book);
       })}
     </section>
   );
 };
 
-const EventExamples = () => {
-  const handleFormInput = (e) => {
-    console.log(e);
-    console.log('handle form input');
-  };
-  const handleButtonclick = (e) => {
-    console.log(e);
-    alert('handle button click');
-  };
-
-  const handleFormSubmission = (e) => {
-    e.preventDefault();
-    console.log('form submitted');
-  };
-
-  return (
-    <section>
-      <form onSubmit={handleFormSubmission}>
-        <h2>Typical Form</h2>
-        <input
-          type="text"
-          name="example"
-          onChange={handleFormInput}
-          style={{ margin: '1rem 0' }}
-        />
-
-        <button type="submit">Submit</button>
-        <div>
-          <button onClick={handleButtonclick} type="button">
-            Click me
-          </button>
-        </div>
-      </form>
-    </section>
-  );
-};
-
 const Book = (props) => {
-  console.log(props);
-  const { img, title, author, children } = props;
+  const { img, title, author, id, children, getBook } = props;
+
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          console.log(id);
+          getBook(id);
+        }}
+      >
+        Log book from array
+      </button>
       <h4>{author} </h4>
       {children}
     </article>
