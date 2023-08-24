@@ -6,12 +6,15 @@ import './index.css';
 
 const BookList = () => {
   return (
-    <section className="booklist">
-      {books.map((book) => {
-        return <Book {...book} key={book.id} />;
-        //return Book(book);
-      })}
-    </section>
+    <>
+      <h1>amazon best sellers</h1>
+      <section className="booklist">
+        {books.map((book, index) => {
+          return <Book {...book} key={book.id} number={index} />;
+          //return Book(book);
+        })}
+      </section>
+    </>
   );
 };
 

@@ -1,16 +1,25 @@
+import img1 from './images/book-1.jpg';
+import img2 from './images/book-2.jpg';
+import img3 from './images/book-3.jpg';
+
 const books = [
   {
     author: 'Abraham Verghese',
     title: "The Covenant of Water (Oprah's Book Club)",
-    img: './images/book-1.jpg',
+    img: img1,
     id: 1,
   },
   {
     author: 'James Clear',
     title: 'Atomic Habits',
-
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    img: img2,
     id: 2,
+  },
+  {
+    author: 'Jimmy Niro',
+    title: 'Dad Jokes',
+    img: img3,
+    id: 3,
   },
 ];
 export default books;
